@@ -2,11 +2,11 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+Elk Diagram (Diagrams/diagram_filenamHW13Github_Elk ResourceGroup_Diagrame.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  - _TODO: (Ansible/Elk_Playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -32,11 +32,11 @@ A load Balancer adds additonal layers of security to a website/ server without a
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __logs___ and system _traffic____.
 
-- _TODO: What does Filebeat watch for?_
+- _What does Filebeat watch for?_
 
     Filebeat monitors the log files or locations that are specified, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
     
-- _TODO: What does Metricbeat record?_
+- What does Metricbeat record?_
 
    Metricbeat is a lightweight shipper that you can install on your servers to periodically collect metrics from the operating system and from services running on the server. Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
@@ -74,10 +74,12 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?______The primary benefit of Ansible is it allows IT administrators to automate away the drudgery from their daily tasks. That frees them to focus on efforts that help deliver more value to the business by spending time on more important tasks_ 
+
+- What is the main advantage of automating configuration with Ansible?______The primary benefit of Ansible is it allows IT administrators to automate away the drudgery from their daily tasks. That frees them to focus on efforts that help deliver more value to the business by spending time on more important tasks_ 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
 
     ...Install Python3-pip
@@ -89,7 +91,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Ansible/docker_ps.png) https://drive.google.com/file/d/1zr9YlFWIla_fAXjg_uwDrFahrRKM9t2m/view?usp=sharing
+Docker ps output](Ansible/docker_ps.png) 
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -113,7 +115,7 @@ SSH into the control node and follow the steps below:
 - Update the __hosts ___ file to include...the IPs of the machines (Web-1 10.0.0.10, Web_2 10.0.0.9, Web_3 10.0.0.12 and elk_project 10.1.0.4 )
 - Run the playbook, and navigate to _23.100.127.27:5601/app/kibana___ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
+ Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?
 
  __We_have filebeat and metricbeat playbooks which are copied in the abisble container_ 
