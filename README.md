@@ -4,11 +4,9 @@ The files in this repository were used to configure the network depicted below.
 
 ![Elk Diagram](Diagrams/HW13Github_Elk_ResourceGroup_Diagram.png)
 
-https://github.com/jarlamin/zona/blob/main/Diagrams/HW13Github_Elk%20ResourceGroup_Diagram.png
-
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: (Ansible/Elk_Playbook.yml)
+[Elk_Playbook] (Ansible/Elk_Playbook.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -24,7 +22,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly reliable (secured and available), in addition to restricting access/traffic to the network.
-- _TODO: What aspect of security do load balancers protect? = 
+- What aspect of security do load balancers protect? = 
 
 A load Balancer adds additonal layers of security to a website/ server without any changes to your application. The off-loading function of a load balancer defends an organization against distributed denial-of-service (DDoS) attacks. It does this by shifting attack traffic from the corporate server to a public cloud provider. is the process of distributing workloads across multiple servers, collectively known as a server cluster. The main purpose of load balancing is to prevent any single server from getting overloaded and possibly breaking down. The Web Application Firewall (WAF) in the load balancer protects your website from hackers and includes daily rule updates just like a virus scanner. The load balancer can Authenticate User Access by requesting a username and password before granting access to a website to protect against unauthorized access. 
 
@@ -58,7 +56,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the __Jump Box___ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_ 45.178.73.238
+- Add whitelisted IP addresses_ 45.178.73.238
 
 Machines within the network can only be accessed by __JumbBox ___.
 - _TODO: Which machine did you allow to access your ELK VM? __JumpBox _ What was its IP address? _10.0.0.7__
