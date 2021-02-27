@@ -60,7 +60,7 @@ Only the __Jump Box___ machine can accept connections from the Internet. Access 
 - Add whitelisted IP addresses_ 45.178.73.238
 
 Machines within the network can only be accessed by __JumbBox ___.
-- _TODO: Which machine did you allow to access your ELK VM? __JumpBox _ What was its IP address? _10.0.0.7__
+- Which machine did you allow to access your ELK VM? __JumpBox _ What was its IP address? _10.0.0.7__
 
 A summary of the access policies in place can be found in the table below.
 
@@ -96,13 +96,13 @@ Docker ps output](Ansible/docker_ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring__10.0.0.10, 10.0.0.9, 10.0.0.12
+- List the IP addresses of the machines you are monitoring__10.0.0.10, 10.0.0.9, 10.0.0.12
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed__filebeat and metricbeat
+- Specify which Beats you successfully installed__filebeat and metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 __-Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 
