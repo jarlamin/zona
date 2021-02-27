@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-Elk Diagram (Diagrams/diagram_filenamHW13Github_Elk ResourceGroup_Diagrame.png)
+Elk Diagram (Diagrams/HW13Github_Elk ResourceGroup_Diagram.png)
 
 https://github.com/jarlamin/zona/blob/main/Diagrams/HW13Github_Elk%20ResourceGroup_Diagram.png
 
