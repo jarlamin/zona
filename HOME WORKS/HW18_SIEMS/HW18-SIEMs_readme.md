@@ -73,7 +73,8 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
     - How long did it take your systems to recover?
        
         - 9 hours before download/upload speeds fully recovered
-        
+
+ - Step 1 Table       
 ![Step1_Table](Step_1_The_Need_for_Speed/Step1_Table.png)
  
 ### Step 2: Are We Vulnerable? 
@@ -97,7 +98,11 @@ Not only were web servers taken offline by a DDOS attack, but upload and downloa
 
 Submit a screenshot of your report and a screenshot of proof that the alert has been created.
 
+- Step 2: Count of Critical Vulnerabilities Report Proof
+
 ![Report_proof](Step_2_Are_We_Vulnerable/Step2_Report.png)
+
+- Step 2: Critical Vulnerabilities Alert_Proof
 
 ![Alert_Proof](Step_2_Are_We_Vulnerable/Step2_Alert.png)
 
@@ -124,7 +129,11 @@ Submit a screenshot of your report and a screenshot of proof that the alert has 
 
 Submit the answers to the questions about the brute force timing, baseline and threshold. Additionally, provide a screenshot as proof that the alert has been created.
 
+- Step 3: Brute force attack Query
+
 ![Step3_Query](Step3_Drawing_the_(base)line/Step3_Query_Brute.png)
+
+- Step 3: Brute Force Query Alert Proof
  
 ![Step3_Alert_Report](Step3_Drawing_the_(base)line/Step3_BruteForce_Query_Alert.png)
 
