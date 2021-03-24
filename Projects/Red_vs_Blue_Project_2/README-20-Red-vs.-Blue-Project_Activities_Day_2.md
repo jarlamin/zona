@@ -22,11 +22,11 @@ Ran url.path: /company_folders/secret_folder/
 
     - HTTP Status Codes for the Top Queries Packetbeat ECS:   
 
-     ![ResponsesVictimSentBack](Day2_Kibana/Step1.q2_Victim_response-http_statuscodes.png)  
+       ![ResponsesVictimSentBack](Day2_Kibana/Step1.q2_Victim_response-http_statuscodes.png)  
 
     - HTTP Error Codes Packetbeat ECS:
 
-     ![ResponsesVictimSentBack](Day2_Kibana/Stp1q2_Victim_response-http_statusERRORcodes.png)
+       ![ResponsesVictimSentBack](Day2_Kibana/Stp1q2_Victim_response-http_statusERRORcodes.png)
 
      - What data is concerning from the Blue Team perspective?
 
@@ -36,11 +36,11 @@ Ran url.path: /company_folders/secret_folder/
     
     - Connection Over Time [Packetbeat Flows] ECS 
 
-     ![ConnectionsOverTime](Day2_Kibana/Stp1_Q3.1-BlueTeam_Perspective.png) 
+       ![ConnectionsOverTime](Day2_Kibana/Stp1_Q3.1-BlueTeam_Perspective.png) 
 
     - Error vs. Successful Transactions [Packetbeat] ECS 
-    
-     ![ErrorsVsSuccessTrans.](Day2_Kibana/Stp1_Q3-BlueTeam_Perspective_Error_Success_transactions.png)
+
+       ![ErrorsVsSuccessTrans.](Day2_Kibana/Stp1_Q3-BlueTeam_Perspective_Error_Success_transactions.png)
 
 2. Find the request for the hidden directory.
    - In your attack, you found a secret folder. Let's look at that interaction between these two machines.
