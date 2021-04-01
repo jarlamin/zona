@@ -57,7 +57,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
--  45.178.73.238 (Local Host IP Address)
+-   (Local Host IP Address)
 
 Machines within the network can only be accessed by:
 - Jump-Box-Provisioner
@@ -74,7 +74,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 45.178.73.238        |
+| Jump Box | Yes                 | (Home IP)       |
 | Web-1    | No                  | 10.0.0.7/ loadbalancer ip |
 | Web-2    | No                  | 10.0.0.10/ LBalancer ip   |
 | Web-3    | N0                  | 10.0.0.12/LB IP           |
