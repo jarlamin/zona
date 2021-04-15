@@ -13,7 +13,7 @@ After setting up my Microsoft Azure Labs, and setting up and lauching our Final 
 
 - Command used: `netdiscover`
 
-Please note that we are using the kali machine 192.168.1.90 to do the exploits/attacks.
+Please note that we are using the kali machine 192.168.1.90 to do the exploits and attack.
 ### Exposed Services
 
 Now that we have the Target Machine's IP; the first step is to run an `nmap` service and version scan to find all exposed ports and services on the network. Please find `nmap` command used as well as results below:
