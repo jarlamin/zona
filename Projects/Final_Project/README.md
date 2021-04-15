@@ -49,11 +49,11 @@ The following vulnerabilities were identified on each target:
 
 After the `nmap` scan completed, the above ports were found open with the above discribed vulnerabilities. 
 
-In attempt to Enumerate the website, starting with port 80 HTTP port, I decided to type the IP address on a web browser in hopes to find some hints on access the webserver. Unfortunately, I did not get any hints. I found instead, a nice website which can be seen in the screenshot below:
+In attempt to Enumerate the website, starting with port 80 HTTP port, I decided to type the IP address on a web browser in hopes to find some hints or ideas in accessing the webserver. Unfortunately, I did not get any hints. I found instead, a nice website which can be seen in the screenshot below:
 
   ![website](Day1.2_Offensive/stp3-Enumerate_Site_1stAttempt.png)
 
-But from the layout and design, it seemed like the target application is using some kind of CMS (Content Management System) to build the application. Knowing that it is a WordPress site, and that there is a WordPress folder, I opened the folder in a browser, a WordPress website is running from this folder but it is not a properly functional as seen below. 
+But from the layout and design, it seemed like the target application is using some kind of CMS (Content Management System) to build the application and knowing that it is a WordPress site, and that there is a WordPress folder, I opened the folder in a browser, a WordPress website is running from this folder but it is not a properly functional website as seen below. 
 
   ![2ndAttemptSite](Day1.2_Offensive/stp3-Enumerate_Site_2ndAttempt.png)
 
@@ -61,11 +61,11 @@ I used a WordPress vulnerability scanner called `wpscanner` to indentify the vul
 
   ![wordpress](Day1.2_Offensive/Q1.3_enumerate_Users.png)
 
-As seen in the above image, we can see that the two users found are: steven and michael
+As seen in the above image, we can see that the two users found are: `steven and michael`
 
 - Command used: `wpscan --url http://192.168.1.110/wordpress --wp-content-dir -ep -et -eu`
 
-Rather than putting too much efford and time creating a command to crack the password for one of the users, I decided to guess it first using the most obvious guess. First we tried the user `steven` but the password was incorrect, then we tried and found out that the password for the user `michael` is `machael` (the same as the username). Below you will see that I used `ssh` and successfully gain access into `michael`s user shell:
+Rather than putting too much efford and time creating a command to crack the passwords for the users, I decided to guess them first using the most obvious guess. First we tried the user `steven` but the password was incorrect, then we tried and found out that the password for the user `michael` is `machael` (the same as the username). Below you will see that I used `ssh` and successfully gain access into the user `michael` shell:
 
   ![SSHUserShell](Day1.2_Offensive/Q1.4_SSH_User-Michael.png)
 
@@ -81,7 +81,7 @@ Until this stage, we had no luck in finding any flags but since we have the user
    - `ls` - to list the /var/www/html directory content. This allows us to see what's in the folder.
    - `grep flag1 *` -  After finding the flag1.txt file, we use the 'grep' command to view the flag hashes. Grep could be used in absence of the above `ls` command. 
 
-And going back one step from the html director to the `/var/www/` directory, we found the second flag `flag2` as you will see below:
+And going back one step from the `html` director to the `/var/www/` directory, we found the second flag `flag2` as you will see below:
 
    ![Flag_2](Day1.2_Offensive/flag2.png)
 
@@ -92,9 +92,9 @@ And going back one step from the html director to the `/var/www/` directory, we 
    - `ls` - to list the `/var/www/` folder content
    - `cat flag2.txt` - to view the flag2 file content
 
-Based on the above screenshots, we can see that we have now found two flags while in the user `michael` user shell. And we are now remaining two more flags 3 and 4.
+Based on the above screenshots, we can see that we now have two flags while in the user `michael` user shell. And we are now remaining two flags 3 and 4.
 
-Now we need to log in to the MySQL and dump wordPress user password hashes. As we know, WordPress was installed in the application, so let’s look for the MySQL database credentials which should be in the `wp-config.php` configuration file.
+Now we need to log in to the MySQL for the wordPress user password hashes. As we know, WordPress was installed in the application, so let’s look for the MySQL database credentials which should be in the `wp-config.php` configuration file.
 
    ![MySQLPasswd](Day1.2_Offensive/Q5-mySQLDatabase.png)
 
@@ -121,21 +121,22 @@ As described above, we used the above commands to list all available databases t
 
   ![ShowTables](Day1.2_Offensive/Show_table_details.png)
 
-As seen above, we have some tables but we are only interested in the password hashes, in this case two so let's see the `wp_users` table data as this generally will contain the passwords.
+As seen above, we have some tables but we are only interested in the password hashes in this case two, so let's see the `wp_users` table data as this generally will contain the passwords.
 
   ![ShowUserHashes](Day1.2_Offensive/Show_Hashes-select--from-wp_users;.png)
 
 Per the above screenshot, we found two hashes as we needed. We already know and have exploired the user `michael's` shell. Now let's try to crack the password for user `steven`. For this we will use 'John the Ripper' tool.
 
-But first we need to append the two user hashes into a text file. I called mine `wp_hashes.txt`. What I did was copied the two hashes, opened a separate terminal window which will brought me to the Kali root user and from their I did a `nano` command to create the hashes file. I chose this route so I wouldn't have to close or exit the MySQL database and having to log back in. 
+But first we need to append the two user hashes into a text file. I called mine `wp_hashes.txt`. What I did was copy the two hashes, opened a separate terminal window which brought me to the Kali root user and from there I did a `nano` command to create the hashes file. I chose this route so I wouldn't have to close or exit out of the MySQL database and having to log back in. 
 
 - Command used: 
    - `nano wp_hashes.txt` - this automatically creates a file called "wp_hashes.txt" and allows me to add the hashes and format them as desired as you will see below:
+    
     ![CreateWP_Hashes](Day1.2_Offensive/nano-wp_hashes.png)
 
-Now that I created our "wp_hashes.txt" located in the main root account, I will go ahead and run `John Ripper` to crack the hashes and reveal the password for the user `steven`. This took some time (2-6 minutes) but we got results, see screenshot below:
+Now that we have our "wp_hashes.txt" located in the main root account, I will go ahead and run `John Ripper` to crack the hashes and reveal the password for the user `steven`. This took some time (2-6 minutes) but we got results, see screenshot below:
 
-    ![JohnRipperREsults](Day1.2_Offensive/stp7_john_-show_wp-hashes.txt.png)
+  ![JohnRipperREsults](Day1.2_Offensive/stp7_john_-show_wp-hashes.txt.png)
 
 - Commands used:
   - `john wp_hashes.txt` - to crack the hash
@@ -145,7 +146,7 @@ Now that I created our "wp_hashes.txt" located in the main root account, I will 
 
     ![sshsteven](Day1.2_Offensive/stp8_ssh_Steven.png)
 
-Now that successfully logged in to the user `steven` as we have seen above, I poked around to see what utilities I can use to help us escalate to root. 
+Now that we are successfully logged in to the user `steven` as we have seen above, I poked around to see what utilities we can use to help us escalate to root. 
 
   ![CheckUsrPrev](Day1.2_Offensive/stp8-Check_sudo_Prev.png)
 
@@ -153,15 +154,17 @@ Now that successfully logged in to the user `steven` as we have seen above, I po
    - `su steven` - used to log in to steven
    - `sudo -l` - to check for utilities I can use with sudo
 
-AS we can see above, I found that there is python so I can use a python command to escalate to sudo as we will see below:
+As we can see above, I found that there is python so I can use a python command to escalate to sudo as we will see below:
 
   ![pythoncommand_root](Day1.2_Offensive/stp9-python_root.png)
 
 - Commands used: `sudo python -c ‘import pty;pty.spawn(“/bin/bash”);’`
 
-Now that we have root access with the above command, we will look around for the remaining two flags. Upon successfully gaining root access, we found our fouth flag sitting right there waiting for us. I ran the following commands, and screenshot of results can be seen below:
+Now that we have root access with the above command, we will look around for the remaining two flags. 
 
   ![flag4](Day1.2_Offensive/flag4.png)
+
+Upon successfully gaining root access, we found our fouth flag sitting right there waiting for us. I ran the following commands, and screenshot of results can be seen above
 
 - Commands used: 
   - `ls` - to view content of the present root directory
@@ -169,7 +172,7 @@ Now that we have root access with the above command, we will look around for the
 
 - Flag4 hash value: **flag4{715dea6c055b9fe3337544932f2941ce}**
 
-As we can see in the above screenshot, we have flag4. Now there is only one flag left to be found. I checked all the files and directories for the flag but I could not find anything. I finally decided to check all the database tables. But to achieve this, we first need to be in the MySQL shell, and if you remember, I previously decided to leave the already logged in MySQL terminal open and ran all the other exploits starting with the `John` tool from a fresh terminal window. Now is the payoff for that decision. And I found the third flag smartly hiding in the blog section as you will see below:
+As we can see in the above screenshot, we have flag4. Now there is only one flag left to be found. I checked all the files and directories for the flag but I could not find anything. I finally decided to check all the database tables. But to achieve this, we first need to be in the MySQL shell, and if you remember, I previously decided to leave the already logged in MySQL terminal open and ran all the other exploits starting with the `John` stage from a fresh terminal window. And now is the payoff for that decision. And I found the third flag smartly hiding in the blog section as you will see below:
 
    ![flag3](Day1.2_Offensive/flag3.png)
 
@@ -189,3 +192,4 @@ Now we have successfully revealed all four flags as you can see below:
 |  Flag 4       | 715dea6c055b9fe3337544932f2941ce |
 
 
+## Thank you for you time :-)
