@@ -8,6 +8,8 @@
 ## The Process:
 
 After setting up my Microsoft Azure Labs, and setting up and lauching our Final Project virtual machine, we need to find the `Target 1`  machine's IP addresses. For this, I started by running the `netdiscover` command to obtain the IP address of the target 1 machine. Although `nmap -sP 192.168.1.1/24` could be used too, I prefer `netdiscover` because the output was cleaner. The command and its output can be seen in the screenshot given below and the target machine's IP is highlighted:
+    
+   - Netdiscover 
     ![step1_netdiscover](Day_1-2-Alert_and_ Attacking_Target_1/stp1_netdiscover.png)
 
 - Command used: `netdiscover`
