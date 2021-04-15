@@ -11,7 +11,7 @@ After setting up my Microsoft Azure Labs, and setting up and lauching our Final 
 
   ![step1_netdiscover](Day_1_2_Alert_ Attacking_Target_1/stp1_netdiscover.png)
 
-- Command used: `netdiscover`
+- Command used: netdiscover
 
 Please note that we are using the kali machine 192.168.1.90 to do the exploits/attacks.
 ### Exposed Services
