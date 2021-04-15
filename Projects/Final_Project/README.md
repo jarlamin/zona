@@ -47,7 +47,7 @@ The following vulnerabilities were identified on each target:
 
 ### Exploitation
 
-After the `nmap` scan completed, the above ports were found open, with the above discribed vulnerabilities. 
+After the `nmap` scan completed, the above ports were found open with the above discribed vulnerabilities. 
 
 In attempt to Enumerate the website, starting with port 80 HTTP port, I decided to type the IP address on a web browser in hopes to find some hints on access the webserver. Unfortunately, I did not get any hints. I found instead, a nice website which can be seen in the screenshot below:
 
